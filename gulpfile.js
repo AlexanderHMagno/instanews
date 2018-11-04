@@ -3,6 +3,11 @@ var gulp = require("gulp"), // Load Gulp!
 uglify = require("gulp-uglify"),
   rename = require("gulp-rename"),
   eslint = require('gulp-eslint'),
+  prettyError = require("gulp-prettyerror"),
+  sass = require("gulp-sass"),
+  autoprefixer = require("gulp-autoprefixer"),
+  cssnano = require("gulp-cssnano"),
+  rename = require("gulp-rename"),
   browserSync = require('browser-sync').create();
 
   gulp.task("scripts", function() {
@@ -22,7 +27,27 @@ gulp.task('sync', function() {
       }
   });
 
-  gulp.watch('./js/*.js', gulp.series('scripts', function () {browserSync.reload(); }));
+  gulp.watch('./js/*.js.scss', gulp.series('scripts', "sass", function () {browserSync.reload(); }));
 });
 
-gulp.task('default', gulp.series('scripts', 'sync'));
+
+
+
+
+gulp.task("sass", function() {
+    return gulp
+      .src("./sass/style.scss")
+      .pipe(prettyError())
+      .pipe(sass())
+      .pipe(
+        autoprefixer({
+          browsers: ["last 2 versions"]
+        })
+      )
+      .pipe(gulp.dest("./build/css"))
+      .pipe(cssnano())
+      .pipe(rename("style.min.css"))
+      .pipe(gulp.dest("./build/css"));
+  });
+
+gulp.task('default', gulp.series('scripts', 'sass', 'sync'));
