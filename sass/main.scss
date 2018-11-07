@@ -6,7 +6,8 @@ body {
     font-size: 16px;
     color:#ffffff;
     background-color: black;
-    
+    font-family: 'Open Sans', 'Times New Roman', Times, serif;
+ 
 }
 
 
@@ -19,25 +20,44 @@ body {
    justify-content: space-between;
    align-items: center;
    height: 350px;
+   margin:auto;
    
-
-   img{
+   .nyc{
        width:275px;
    }
 }
 
+.submenu{
+    text-align: center;
+    min-width: 130px;
+}
 
 .container{
     display:none;
+
+   
 }
 
-
+.loader{
+    display:none;
+    width:40px;
+}
 
     
 footer{
-   justify-self: flex-end;
+
+   justify-self: center;
     margin-top: 50px;
     margin-bottom: 20px;
+    color:#c2c2c2;
+
+
+    p{
+
+        padding-left:20px;
+    }
+
+    
 }
 
 

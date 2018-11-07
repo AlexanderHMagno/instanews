@@ -1,5 +1,6 @@
 
 var data =  [
+  "Sections...",
   "home",
   "opinion",
   "world",
@@ -46,6 +47,9 @@ $("select").change(function () {
   var section = $("select").val()
 
   //Make dissapear the first menu
+
+  
+  $(".loader").fadeIn(1500).fadeOut(1500);
  
   
   var url = "https://api.nytimes.com/svc/topstories/v2/"+section+".json";
@@ -55,11 +59,19 @@ $("select").change(function () {
   $.ajax({
     url: url,
     method: 'GET',
-  }).done(function (data) {
-    $(".container").css("display","grid");
-    $(".fullBody").html("");
-    $(".initial").css({"height":"30%","margin":"30px 0px"});  
-    $(".initial>img").css({"width":"100px"}); 
+  }).always(function () {
+   
+    
+
+    })
+   
+  .done(function (data) {
+    $(".container").fadeOut(1).fadeIn(4000);
+    
+    //$(".container").css("display","grid");
+    $(".fullBody").html("")
+    $(".initial").css({"height":"150px","margin":"30px 0px"});  
+    $(".initial>div>img").css({"width":"100px"}); 
     var datas = data.results //this is my main source of info
     var count = 0 // its a counter created in order to build new class.
    
@@ -78,5 +90,7 @@ $("select").change(function () {
         
       }
     });
-  });
+  }).fail(function(data){
+  alert("Try again champ!");
+});
 });

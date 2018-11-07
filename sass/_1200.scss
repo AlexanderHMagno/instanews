@@ -1,0 +1,27 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width: 1200px) {
+    .initial{
+
+        flex-direction: row;
+    justify-content: flex-start;
+   
+align-items: center;
+margin-left:50px;
+
+
+img{
+
+    margin-right: 50px;
+}}
+
+body{
+
+    align-items: flex-start;
+    }
+
+footer{
+
+    margin-left:80px;
+}
+
+}

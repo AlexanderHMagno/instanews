@@ -26,9 +26,17 @@ gulp.task('sync', function() {
           baseDir: "./"
       }
   });
-
-  gulp.watch('./js/*.js.scss', gulp.series('scripts', "sass", function () {browserSync.reload(); }));
 });
+  
+
+
+  gulp.task('watch', function() {  
+     gulp.watch('./js/*.js./scss/*.scss', gulp.series('scripts', "sass", function () {browserSync.reload(); }));
+     gulp.watch('./scss/*.scss', gulp.series( "sass", function () {browserSync.reload(); }));
+
+});
+
+
 
 
 
