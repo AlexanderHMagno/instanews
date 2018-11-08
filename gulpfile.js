@@ -25,22 +25,11 @@ gulp.task('sync', function() {
       server: {
           baseDir: "./"
       }
-  });
-});
-  
-
-
-  gulp.task('watch', function() {  
-     gulp.watch('./js/*.js./scss/*.scss', gulp.series('scripts', "sass", function () {browserSync.reload(); }));
-     gulp.watch('./scss/*.scss', gulp.series( "sass", function () {browserSync.reload(); }));
+  });  
+     gulp.watch('./js/*.js', gulp.series('scripts', function () {browserSync.reload(); }));
+     gulp.watch('./sass/*.scss', gulp.series( "sass", function () {browserSync.reload(); }));
 
 });
-
-
-
-
-
-
 
 gulp.task("sass", function() {
     return gulp
