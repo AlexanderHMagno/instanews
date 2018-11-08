@@ -145,7 +145,7 @@ footer {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  height: 80%; }
+  height: auto; }
 
 .newsBody {
   position: relative;
