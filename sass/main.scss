@@ -1,14 +1,13 @@
 body {
-    display:flex;
-    flex-direction: column;
+
+    @include vertical;
     justify-content: center;
-    align-items: center;
     font-size: 16px;
-    color:#ffffff;
-    background-color: black;
+    color:$brand-white;
+    background-color: $brand-back;
     font-family: 'Open Sans', 'Times New Roman', Times, serif;
  
-@include desktop {
+    @include desktop {
     align-items: flex-start;
 }
 
@@ -18,11 +17,8 @@ body {
 /* primer menu*/
 
 .initial{
-
-   display: flex;
-   flex-direction: column;
+   @include vertical;
    justify-content: space-between;
-   align-items: center;
    height: 350px;
    margin:auto;
      
@@ -127,14 +123,14 @@ height: auto;
     height: 400px;
     overflow: hidden;
     opacity: 0.6;
-    border: 0 solid white;
+    border: 1px solid  rgba(0, 0, 0, 0.01);
     transition: opacity 1s, border 1s;
     
   &:hover{
 
     cursor: pointer;
     opacity: 1;
-    border: 1px solid white;
+    border: 1px solid $brand-white;
   }
 
     }
@@ -150,7 +146,7 @@ height: auto;
     padding: 10px;
     height: 30%;
     text-decoration: none;
-    color: #ffffff;
+    color: $brand-white;
     text-align: left;
     
     p{

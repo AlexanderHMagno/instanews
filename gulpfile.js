@@ -1,6 +1,6 @@
 var gulp = require("gulp"), // Load Gulp!
 // Now that we've installed the uglify package we can require it:
-uglify = require("gulp-uglify"),
+terser = require("gulp-terser"),
   rename = require("gulp-rename"),
   eslint = require('gulp-eslint'),
   prettyError = require("gulp-prettyerror"),
@@ -15,7 +15,7 @@ uglify = require("gulp-uglify"),
     .src("./js/*.js") // What files do we want gulp to consume?
     .pipe(eslint())
     .pipe(eslint.format())
-    .pipe(uglify()) // Call the uglify function on these files
+    .pipe(terser()) // Call the uglify function on these files
     .pipe(rename({ extname: ".min.js" })) // Rename the uglified file
     .pipe(gulp.dest("./build/js")); // Where do we put the result?
 });
