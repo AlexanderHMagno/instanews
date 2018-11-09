@@ -92,6 +92,11 @@ body {
   color: #ffffff;
   background-color: black;
   font-family: 'Open Sans', 'Times New Roman', Times, serif; }
+  @media (min-width: 1200px) {
+    body {
+      -webkit-box-align: start;
+          -ms-flex-align: start;
+              align-items: flex-start; } }
 
 /* primer menu*/
 .initial {
@@ -112,16 +117,47 @@ body {
   margin: auto; }
   .initial .nyc {
     width: 275px; }
+  @media (min-width: 600px) {
+    .initial {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      width: 300px; } }
+  @media (min-width: 1200px) {
+    .initial {
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      margin-left: 50px;
+      padding-left: 50px; }
+      .initial img {
+        margin-right: 50px; } }
 
 .submenu {
   text-align: center;
   min-width: 130px; }
+  @media (min-width: 600px) {
+    .submenu {
+      text-align: left; } }
 
 .container {
   display: none;
   width: 100%; }
   .container a {
     width: 100%; }
+    @media (min-width: 600px) {
+      .container a {
+        width: 33.3%; } }
+    @media (min-width: 1200px) {
+      .container a {
+        width: 25%; } }
 
 .loader {
   display: none;
@@ -132,8 +168,11 @@ footer {
   margin-top: 50px;
   margin-bottom: 20px;
   color: #c2c2c2; }
-  footer p {
-    padding-left: 20px; }
+  @media (min-width: 1200px) {
+    footer {
+      margin-left: 80px; }
+      footer p {
+        padding-left: 20px; } }
 
 /* top stories structure*/
 .fullBody {
@@ -151,7 +190,15 @@ footer {
   position: relative;
   width: 100%;
   height: 400px;
-  overflow: hidden; }
+  overflow: hidden;
+  opacity: 0.6;
+  border: 0 solid white;
+  -webkit-transition: opacity 1s, border 1s;
+  transition: opacity 1s, border 1s; }
+  .newsBody:hover {
+    cursor: pointer;
+    opacity: 1;
+    border: 1px solid white; }
 
 .phantom {
   background-color: rgba(0, 0, 0, 0.568);
@@ -166,47 +213,3 @@ footer {
   text-align: left; }
   .phantom p {
     width: 95%; }
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (min-width: 600px) {
-  .initial {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    width: 300px; }
-  .submenu {
-    text-align: left; }
-  .container a {
-    width: 33.3%; } }
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (min-width: 1200px) {
-  .initial {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin-left: 50px; }
-    .initial img {
-      margin-right: 50px; }
-  body {
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start; }
-  .container a {
-    width: 25%; }
-  footer {
-    margin-left: 80px; } }
