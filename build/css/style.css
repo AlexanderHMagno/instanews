@@ -169,9 +169,12 @@ body {
   position: relative; }
   .menuSelector .arrow {
     position: absolute;
-    right: 22px;
+    right: 13px;
     margin-right: 0;
     height: 100%; }
+    @media (min-width: 600px) {
+      .menuSelector .arrow {
+        right: 21px; } }
 
 .loader {
   display: none;

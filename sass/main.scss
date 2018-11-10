@@ -88,9 +88,13 @@ body {
 
     .arrow{
         position: absolute;
-        right: 22px;
+        right: 13px;
         margin-right: 0;
         height: 100%;
+
+        @include tablet {
+            right: 21px;
+        }
         }
     }
 
