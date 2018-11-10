@@ -33,23 +33,23 @@ var data =  [
   "insider"
 ];
 $.each(data, function (key, value) {
-
-
 $("select").append("<option value=\""+value+"\">"+value+"</option>");
-
 }); // it shows the initial menu
 
 
-
-
+$(".arrow").on("click",function () {
+  $(this).fadeOut("fast");
+ });
 
 
 
 
 //This is the button that has to be activated in order to update news.
 $("select").change(function () {
-  var section = $("select").val()
 
+  
+  var section = $("select").val();
+$(".arrow").show();
  
  
   
@@ -66,10 +66,12 @@ $("select").change(function () {
     if($(".nyc").width()===275){
       $(".initial").fadeOut(1500).fadeIn(1500);
       $(".container").fadeIn(5000);
+      $(".loader").fadeIn(2000).fadeOut(3000);
     } else {
-      $(".container").fadeOut(1500).fadeIn(1500);}
+      $(".container").fadeOut(1500).fadeIn(1500);
+      $(".loader").fadeIn(1500).fadeOut(1500);}
     
-    $(".loader").fadeIn(1500).fadeOut(1500);
+    
     
 
     })

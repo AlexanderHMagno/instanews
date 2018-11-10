@@ -21,6 +21,13 @@ $brand-white: #ffffff;
 
 $desktop-width: 1200px;
 $tablet-width: 600px;
+$bigger-width: 1400px;
+
+@mixin bigger {
+  @media (min-width: $bigger-width) {
+    @content;
+  }
+}
 
 @mixin desktop {
   @media (min-width: $desktop-width) {
