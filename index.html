@@ -1,5 +1,6 @@
-<!DOCTYPE <!DOCTYPE html>
-<html>
+
+<!DOCTYPE html>
+<html  lang="en">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,52 +11,48 @@
 <link rel="stylesheet" href="build/css/style.min.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 </head>
+
+
+
 <body>
 
 
-<!--primer menu-->
-<header class="initial">
-    <div>
-           
-        <img class="nyc" src="assets/images/nyt-logo.svg">
-    </div>
-    <div class="subMenu">
-            <br>
-        <p>Choose a section:</p> <br>
-        <div class="menuSelector">
-            <select  class="js-example-basic-single" name="state" >
-            </select>
-
-        <img src="assets/images/arrow.jpg" alt="arrow" class="arrow">
-        </div>
-        
-    </div>
-    <img class="loader" src="assets/images/ajax-loader.gif">
-</header>
-
-<!--news-->
-
-
-<section class="container">
     
-    <ul class="fullBody">
-    </ul>
-</section>
+    <header class="initial">
+        <div>
+            <img class="nyc" src="assets/images/nyt-logo.svg" alt="nyt-logo">
+        </div>
+        <div class="subMenu">
+            <br>
+            <p>Choose a section:</p> <br>
+            <div class="menuSelector">
+                <select class="js-example-basic-single" name="state">
+                </select>
+                <img src="assets/images/arrow.jpg" alt="arrow" class="arrow">
+                <img class="loader" src="assets/images/ajax-loader.gif" alt="loader-image">
+            </div>
+        </div>
+       
+    </header>
 
-<footer>
-   
-    <p>© Copyright 2018 INSTANEWS</p>
-</footer>
+    <!--this is the container the news, at the beggining is off-->
+    <section class="container">
+        <ul class="fullBody">
+        </ul>
+    </section>
+
+    <footer>
+        <p>© Copyright 2018 INSTANEWS</p>
+    </footer>
 
 
 
 
 
 
-<!-- JavaScript-->
-<script src="Js/jquery-3.3.1.min.js"></script>
-<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-<script src="Js/instanews.js"></script>
+    <!-- JavaScript-->
+    <script src="Js/jquery-3.3.1.min.js"></script>
+    <script src="Js/instanews.js"></script>
 
 
 </body>
