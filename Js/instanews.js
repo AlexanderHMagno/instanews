@@ -3,7 +3,7 @@ $(function() {
  
 
 
-var data =  [
+let data =  [
   "Sections...",
   "home",
   "opinion",
@@ -32,36 +32,36 @@ var data =  [
   "obituaries",
   "insider"
 ];
-$.each(data, function (key, value) {
+
+$.each(data, (key, value) => {
 $("select").append("<option value=\""+value+"\">"+value+"</option>");
 }); // it shows the initial menu
 
-
-$(".arrow").on("click",function () {
-  $(this).fadeOut("fast");
- });
+arrow = $('.arrow');
+arrow.on("click" , () =>  {arrow.fadeOut("fast");
+});
 
 
 
 
 //This is the button that has to be activated in order to update news.
-$("select").change(function () {
+$("select").change(() => {
 
   
-  var section = $("select").val();
+  let section = $("select").val();
 $(".arrow").show();
  
  
   
   
-  var url = "https://api.nytimes.com/svc/topstories/v2/"+section+".json";
+  let url = "https://api.nytimes.com/svc/topstories/v2/"+section+".json";
   url += '?' + $.param({
-    'api-key': "90a077fb52414546bcc9e4944c36b24d"
+    'api-key': "RfuE6YzG7PkssPfAnk877s3ZPIARUsm5"
   });
   $.ajax({
     url: url,
     method: 'GET',
-  }).always(function () {
+  }).always(() => {
 
     if($(".nyc").width()===275){
       $(".initial").fadeOut(1500).fadeIn(1500);
@@ -76,17 +76,16 @@ $(".arrow").show();
 
     })
    
-  .done(function (data) {
+  .done(data => {
     
-    setTimeout(function(){ 
+    setTimeout(() => { 
         $(".fullBody").html("");
     $(".initial").css({"height":"150px","margin":"30px 0px"});  
     $(".initial>div>img").css({"width":"100px"}); 
     
     let source = data.results 
     let count = 0 
-
-    $.each(source, function (key, value) {
+    $.each(source, (key, value)=> {
     //for each news it will create a new container. 
 
       if (value.multimedia[4]&&count<12) {
@@ -102,9 +101,7 @@ $(".arrow").show();
     });
   }, 1500
   );
-}).fail(function(data){
-  alert("Try again");
-});
+}).fail(data => alert("Try again"));
 });
 
 });
